@@ -1,11 +1,55 @@
-// Particle.js Background
-particlesJS("particles-js", {
-    particles: {
-        number: { value: 80 },
-        size: { value: 3 },
-        move: { speed: 2 }
-    }
+document.addEventListener("DOMContentLoaded", function() {
+    particlesJS("particles-js", {
+        particles: {
+            number: {
+                value: window.innerWidth < 768 ? 50 : 100, // Adjust for mobile responsiveness
+                density: { enable: true, value_area: 900 }
+            },
+            color: { value: ["#ff9800", "#ffdd40", "#ffffff", "#ff4081"] }, // Multiple colors
+            shape: {
+                type: ["circle", "star", "polygon"], // Variety of shapes
+                stroke: { width: 0, color: "#000000" },
+                polygon: { nb_sides: 6 } // Hexagons
+            },
+            opacity: {
+                value: 0.7,
+                random: true,
+                anim: { enable: true, speed: 1, opacity_min: 0.3, sync: false }
+            },
+            size: {
+                value: 4,
+                random: true,
+                anim: { enable: true, speed: 2, size_min: 0.3, sync: false }
+            },
+            move: {
+                enable: true,
+                speed: 1.5, // Slower for a more elegant effect
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: { enable: true, rotateX: 600, rotateY: 1200 }
+            }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: { enable: true, mode: "repulse" }, // Repel effect on hover
+                onclick: { enable: true, mode: "bubble" }, // Bubble explosion on click
+                resize: true
+            },
+            modes: {
+                grab: { distance: 300, line_linked: { opacity: 0.5 } },
+                bubble: { distance: 200, size: 8, duration: 2, opacity: 0.8, speed: 3 },
+                repulse: { distance: 150, duration: 0.4 },
+                push: { particles_nb: 4 }
+            }
+        },
+        retina_detect: true
+    });
 });
+
 
 // Smooth Scroll
 document.querySelectorAll('nav a').forEach(anchor => {
