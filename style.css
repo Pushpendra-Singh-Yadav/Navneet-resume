@@ -370,28 +370,27 @@ section {
     position: relative;
     width: 100%;
     padding: 80px 10%;
-    background: linear-gradient(135deg, #111, #222);
+    background: linear-gradient(135deg, #1a1a1a, #292929);
     color: white;
     text-align: center;
-    overflow: visible; /* FIXED */
 }
 
 /* Section Title */
 .section-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #ff9800;
-    text-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
-    margin-bottom: 40px;
-    animation: fadeInUp 1s ease-in-out;
+    text-shadow: 0 0 25px rgba(255, 165, 0, 0.8);
+    margin-bottom: 50px;
+    animation: fadeInDown 1s ease-in-out;
 }
 
 /* Timeline */
 .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px 0;
 }
@@ -400,54 +399,74 @@ section {
 .timeline-item {
     position: relative;
     margin-bottom: 50px;
-    padding: 20px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+    padding: 25px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.4);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     text-align: left;
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* FIXED */
-    opacity: 1 !important; /* FIXED */
+    flex-wrap: wrap;
 }
 
 /* Hover Effects */
 .timeline-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 165, 0, 0.6);
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.7);
 }
 
 /* Timeline Dot */
 .timeline-dot {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     background: #ff9800;
     border-radius: 50%;
     position: absolute;
-    left: -20px;
+    left: -25px;
     top: 50%;
     transform: translateY(-50%);
-    box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+    box-shadow: 0 0 12px rgba(255, 165, 0, 0.9);
+    border: 3px solid white;  /* Added for visibility */
 }
 
 /* Timeline Content */
 .timeline-content {
     padding: 20px;
-    color: white;
-    flex-grow: 1; /* FIXED */
+    flex-grow: 1;
+    z-index: 2;
+}
+
+/* Job Title */
+.job-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffdd40;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out;
+    text-shadow: 0 0 10px rgba(255, 221, 64, 0.8);
+}
+
+/* Fixing Invisible Text */
+.job-details {
+    font-size: 1.2rem;
+    color: white !important;
+    line-height: 1.6;
+    font-weight: 400;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 /* Highlight Text */
 .highlight {
     color: #ff9800;
     font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 165, 0, 0.8);
 }
 
 /* Animation */
-@keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(30px); }
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-30px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
@@ -460,7 +479,7 @@ section {
 
 @media (max-width: 768px) {
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
     .timeline-item {
         padding: 15px;
@@ -468,16 +487,22 @@ section {
         align-items: flex-start;
     }
     .timeline-dot {
-        left: -10px;
+        left: -12px;
     }
 }
 
 @media (max-width: 480px) {
     .section-title {
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
     .timeline-item {
-        padding: 10px;
+        padding: 12px;
+    }
+    .job-title {
+        font-size: 1.5rem;
+    }
+    .job-details {
+        font-size: 1rem;
     }
 }
 

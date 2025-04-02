@@ -76,17 +76,3 @@ document.addEventListener("DOMContentLoaded", () => {
     progressBars.forEach(progress => observer.observe(progress));
 });
 
-// Animate Experience Cards on Scroll
-document.addEventListener("DOMContentLoaded", () => {
-    const timelineItems = document.querySelectorAll(".timeline-item");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("fade-in");
-            }
-        });
-    }, { threshold: 0.3 });
-
-    timelineItems.forEach(item => observer.observe(item));
-});
