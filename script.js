@@ -76,3 +76,20 @@ document.addEventListener("DOMContentLoaded", () => {
     progressBars.forEach(progress => observer.observe(progress));
 });
 
+function filterProjects(category) {
+    let projects = document.querySelectorAll(".project-card");
+    let buttons = document.querySelectorAll(".filter-btn");
+
+    buttons.forEach(btn => btn.classList.remove("active"));
+    event.target.classList.add("active");
+
+    projects.forEach(project => {
+        if (category === "all" || project.classList.contains(category)) {
+            project.style.display = "block";
+            setTimeout(() => project.style.opacity = "1", 100);
+        } else {
+            project.style.opacity = "0";
+            setTimeout(() => project.style.display = "none", 300);
+        }
+    });
+}

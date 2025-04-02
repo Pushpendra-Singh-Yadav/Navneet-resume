@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navneet Garg - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script> 
 </head>
 <body>
-
-    <!-- Particle Background -->
+    <!-- Particles.js Background -->
     <div id="particles-js"></div>
 
     <!-- Navbar -->
@@ -67,7 +68,7 @@
             </div>
         </div>
         <div class="about-image">
-            <img src="your-image.jpg" alt="Navneet Garg" class="profile-pic">
+            <img src="profile photo.jpg" alt="Navneet Garg" class="profile-pic">
         </div>
     </div>
 </section>
@@ -87,47 +88,159 @@
     </div>
 </section>
 
+<!-- Projects Section -->
+<section id="projects" class="section">
+    <h2 class="section-title">Projects</h2>
 
-
-    <!-- Projects Section -->
-    <section id="projects" class="section fade-in">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>AI-Powered Personal Stylist</h3>
-            <p>AI-based e-commerce solution for personalized recommendations using TensorFlow and OpenCV.</p>
-        </div>
-        <div class="project-card">
-            <h3>Wound Detection</h3>
-            <p>Built a CNN model to classify wound types using TensorFlow and Keras.</p>
-        </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="section fade-in">
-        <h2>Achievements</h2>
-        <ul>
-            <li>Published Research Paper on AI in IoT & Blockchain</li>
-            <li>Won Drone Project Competition (2024)</li>
-            <li>Hackathon Semi-Finalist (5×)</li>
-        </ul>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section fade-in">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:navneetg050@gmail.com">navneetg050@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/Navneet-Garg">github.com/Navneet-Garg</a></p>
-    </section>
-
-    <!-- Social Media Floating Icons -->
-    <div class="social-icons">
-        <a href="https://github.com/Navneet-Garg" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/navneet-garg" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:navneetg050@gmail.com"><i class="fas fa-envelope"></i></a>
+    <!-- Project Filter Tabs -->
+    <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterProjects('all')">All</button>
+        <button class="filter-btn" onclick="filterProjects('AI')">AI & ML</button>
+        <button class="filter-btn" onclick="filterProjects('NLP')">NLP</button>
+        <button class="filter-btn" onclick="filterProjects('Automation')">Automation</button>
     </div>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <!-- Projects Container -->
+    <div class="projects-container">
 
+        <!-- Project 1 -->
+        <div class="project-card AI">
+            <div class="project-content">
+                <h3 class="project-title">AI-Powered Personal Stylist</h3>
+                <p class="project-description">AI-based e-commerce solution for personalized recommendations, quality verification, and sentiment analysis.</p>
+                <span class="tech-stack">Tech Stack: Python, TensorFlow, OpenCV, Flask, MongoDB</span>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card AI">
+            <div class="project-content">
+                <h3 class="project-title">Wound Detection</h3>
+                <p class="project-description">Developed a CNN model to classify wound types for medical applications.</p>
+                <span class="tech-stack">Tech Stack: Python, TensorFlow, Keras, OpenCV</span>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card NLP">
+            <div class="project-content">
+                <h3 class="project-title">SMS Spam Classifier</h3>
+                <p class="project-description">Built an NLP-based system to detect and filter spam messages.</p>
+                <span class="tech-stack">Tech Stack: Python, Scikit-learn, NLP, Pandas</span>
+            </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card Automation">
+            <div class="project-content">
+                <h3 class="project-title">Automated WhatsApp Messaging</h3>
+                <p class="project-description">Streamlined bulk messaging using Pandas and pywhatkit.</p>
+                <span class="tech-stack">Tech Stack: Python, Pywhatkit, Pandas</span>
+            </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card NLP">
+            <div class="project-content">
+                <h3 class="project-title">WhatsApp Chat Analyzer</h3>
+                <p class="project-description">Extracted and visualized chat insights using Pandas, NumPy, Matplotlib, Seaborn, and Plotly.</p>
+                <span class="tech-stack">Tech Stack: Python, Pandas, Matplotlib, Seaborn, Plotly</span>
+            </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card AI">
+            <div class="project-content">
+                <h3 class="project-title">Indoor Navigation Project</h3>
+                <p class="project-description">Currently developing an AI-driven indoor navigation system showcased in hackathons.</p>
+                <span class="tech-stack">Tech Stack: Python, Deep Learning, Reinforcement Learning, Flask, MongoDB</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- 🏆 Achievements Section -->
+<section id="achievements" class="section">
+    <h2 class="section-title">Achievements</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-icon">📜</div>
+            <div class="timeline-content">
+                <h3>Published Research Paper</h3>
+                <p>Published <span class="highlight">"Harnessing the Power of AI in IoT and Blockchain"</span> at ADSSS 2024.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-icon">🚁</div>
+            <div class="timeline-content">
+                <h3>Drone Project Competition Winner</h3>
+                <p>Won a <span class="highlight">cash prize, trophy, and certificate</span> for a cost-efficient drone using Arduino Uno and MPU6050.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-icon">🔓</div>
+            <div class="timeline-content">
+                <h3>Cybersecurity Challenge</h3>
+                <p>Identified security vulnerabilities and captured database flags, earning a certificate in a hacking competition (2023).</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-icon">🏆</div>
+            <div class="timeline-content">
+                <h3>Hackathon Semi-Finalist (5×)</h3>
+                <p>Reached the semi-finals of multiple hackathons, including Flipkart Grid 2.0.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 📞 Contact Section -->
+<section id="contact" class="section">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-container">
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <!-- Hidden Honeypot Field to Prevent Spam -->
+                <input type="hidden" name="form-name" value="contact">
+    
+                <div class="form-group">
+                    <input type="text" name="name" id="name" required>
+                    <label for="name">Your Name</label>
+                </div>
+    
+                <div class="form-group">
+                    <input type="email" name="email" id="email" required>
+                    <label for="email">Your Email</label>
+                </div>
+    
+                <div class="form-group">
+                    <textarea name="message" id="message" required></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+    
+                <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+        </div>
+    </div>    
+</section>
+
+<!-- 🌍 Social Media Floating Icons -->
+<div class="social-icons">
+    <a href="https://github.com/Navneet-Garg" target="_blank" class="github" rel="noopener noreferrer">
+        <i class="fab fa-github"></i> <span>GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/in/navneet-garg" target="_blank" class="linkedin" rel="noopener noreferrer">
+        <i class="fab fa-linkedin"></i> <span>LinkedIn</span>
+    </a>    
+    <a href="mailto:navneetg050@gmail.com" class="email" title="Send me an Email">
+        <i class="fas fa-envelope"></i>
+    </a>
+</div>
+<!-- Font Awesome Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 </body>
 </html>
