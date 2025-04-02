@@ -1,0 +1,511 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #000000, #111111);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header - Navbar */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 15, 15, 0.95); /* Opaque Dark Background */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff9800; /* Orange Glow */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Logo Hover Effect */
+.logo:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+}
+
+/* Navbar Links */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Navbar Hover Effect */
+.nav-links li a:hover {
+    color: #ff9800;
+}
+
+/* Glowing Underline Effect */
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, orange, yellow);
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+/* Expand the line on hover */
+.nav-links li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 30px;
+    }
+
+    /* Hide desktop menu & show toggle button */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(20, 20, 20, 0.95);
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    /* Show menu when active */
+    nav.active .nav-links {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Sections for Spacing */
+section {
+    padding: 100px 50px;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 span {
+    color: orange;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: darkorange;
+}
+
+/* Sections */
+.section {
+    padding: 100px 20px;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+/* About Section */
+#about {
+    position: relative;
+    width: 100%;
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #1b1b1b, #111111);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* About Container */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.about-container:hover {
+    transform: scale(1.02);
+}
+
+/* About Content */
+.about-content {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ff9800;
+    text-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* About Text */
+.about-text {
+    font-size: 1.2rem;
+    color: #ddd;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+/* Highlight Effect */
+.highlight {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+/* Skills Section */
+.skills {
+    margin-top: 20px;
+}
+
+/* Skill Box */
+.skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 70%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Animated Progress */
+.progress {
+    height: 100%;
+    width: 0;
+    border-radius: 50px;
+    transition: width 2s ease-in-out;
+}
+
+.python { background: linear-gradient(90deg, #ff9800, #ff7300); width: 90%; }
+.flask { background: linear-gradient(90deg, #4CAF50, #2E7D32); width: 85%; }
+.mongodb { background: linear-gradient(90deg, #00C853, #00BFA5); width: 80%; }
+.tensorflow { background: linear-gradient(90deg, #F57C00, #E65100); width: 75%; }
+
+/* Profile Image */
+.about-image {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ff9800;
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.6);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Profile Hover Effect */
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/* Fade-In Animation */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-image {
+        margin-top: 20px;
+    }
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    .about-text {
+        font-size: 1rem;
+    }
+    .progress-bar {
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .about-text {
+        font-size: 0.9rem;
+    }
+    .progress-bar {
+        width: 50%;
+    }
+}
+
+/* Experience Section */
+#experience {
+    position: relative;
+    width: 100%;
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #111, #222);
+    color: white;
+    text-align: center;
+    overflow: visible; /* FIXED */
+}
+
+/* Section Title */
+.section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ff9800;
+    text-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Timeline Item */
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* FIXED */
+    opacity: 1 !important; /* FIXED */
+}
+
+/* Hover Effects */
+.timeline-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.6);
+}
+
+/* Timeline Dot */
+.timeline-dot {
+    width: 15px;
+    height: 15px;
+    background: #ff9800;
+    border-radius: 50%;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+}
+
+/* Timeline Content */
+.timeline-content {
+    padding: 20px;
+    color: white;
+    flex-grow: 1; /* FIXED */
+}
+
+/* Highlight Text */
+.highlight {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .timeline {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    .timeline-item {
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .timeline-dot {
+        left: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .timeline-item {
+        padding: 10px;
+    }
+}
+
+/* Social Icons */
+.social-icons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 24px;
+    margin: 5px;
+    color: white;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: orange;
+}
+
+/* Particle Background */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
