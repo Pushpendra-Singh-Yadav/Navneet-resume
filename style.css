@@ -19,130 +19,104 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Header - Navbar */
-header {
+/* 🔥 General Navbar Styling */
+.navbar {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    background: rgba(15, 15, 15, 0.95); /* Opaque Dark Background */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    padding: 15px 30px;
     z-index: 1000;
-    transition: all 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
 }
 
-/* Logo */
-.logo {
-    font-size: 1.8rem;
+/* 🌟 Logo */
+.logo a {
+    color: #ff9800; 
+    font-size: 22px;
     font-weight: bold;
-    color: #ff9800; /* Orange Glow */
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+    text-decoration: none;
 }
 
-/* Logo Hover Effect */
-.logo:hover {
-    transform: scale(1.1);
-    text-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
-}
-
-/* Navbar Links */
-nav {
-    display: flex;
-    align-items: center;
-}
-
+/* 📌 Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 
 .nav-links li {
     position: relative;
 }
 
-.nav-links li a {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: white;
+.nav-links a {
     text-decoration: none;
-    padding: 10px 15px;
-    position: relative;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
     transition: color 0.3s ease-in-out;
 }
 
-/* Navbar Hover Effect */
-.nav-links li a:hover {
-    color: #ff9800;
+/* 🔥 Hover Effects */
+.nav-links a:hover {
+    color: #ffdd40;
 }
 
-/* Glowing Underline Effect */
-.nav-links li a::after {
-    content: "";
+/* 🔥 Underline Animation */
+.nav-links a::after {
+    content: '';
     position: absolute;
     left: 50%;
     bottom: -5px;
     width: 0;
-    height: 3px;
-    background: linear-gradient(90deg, orange, yellow);
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    height: 2px;
+    background: #ffdd40;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
 }
 
-/* Expand the line on hover */
-.nav-links li a:hover::after {
+.nav-links a:hover::after {
     width: 100%;
-    left: 0;
 }
 
-/* Mobile Menu Button */
+/* 📱 Mobile Menu */
 .menu-toggle {
     display: none;
-    font-size: 2rem;
+    font-size: 24px;
     color: white;
     cursor: pointer;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        padding: 10px 30px;
-    }
-
-    /* Hide desktop menu & show toggle button */
+/* 🌍 Responsive Navbar */
+@media screen and (max-width: 768px) {
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 60px;
-        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
         width: 100%;
-        background: rgba(20, 20, 20, 0.95);
         text-align: center;
         padding: 20px 0;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-        transition: all 0.3s ease-in-out;
     }
 
     .nav-links li {
         margin: 15px 0;
     }
 
-    /* Show menu when active */
-    nav.active .nav-links {
-        display: flex;
-    }
-
     .menu-toggle {
         display: block;
     }
+
+    .nav-links.active {
+        display: flex;
+    }
 }
+
 
 /* Sections for Spacing */
 section {
